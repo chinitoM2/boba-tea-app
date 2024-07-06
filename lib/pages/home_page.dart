@@ -1,4 +1,6 @@
 import 'package:boba_tea_app/components/bottom_nav_bar.dart';
+import 'package:boba_tea_app/pages/cart_page.dart';
+import 'package:boba_tea_app/pages/menu_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,9 +25,9 @@ class _HomePageState extends State<HomePage> {
   // pages to display
   final List<Widget> _pages = [
     // menu page
-    MenuPage(),
+    const MenuPage(),
     // cart page
-    CartPage(),
+    const CartPage(),
   ];
 
   @override
@@ -35,6 +37,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: MyBottomNavBar(
         onTabChange: (index) => navigateBottomBar(index),
       ),
+      body: _pages[_selectedIndex]
     );
   }
 }
