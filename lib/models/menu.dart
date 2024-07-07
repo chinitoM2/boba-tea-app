@@ -7,7 +7,7 @@ class BobaTeaMenu extends ChangeNotifier{
     // classic milk tea
     Drink(
       name: "Classic Milk Tea",
-      price: "5.50",
+      price: 5.50,
       imagePath: "lib/images/classic_milk_tea.png",
     ),
   ];

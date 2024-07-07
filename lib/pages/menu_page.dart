@@ -1,8 +1,11 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'package:boba_tea_app/models/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../components/drink_tile.dart';
+import '../models/drink.dart';
+import 'order_page.dart';
 
 class MenuPage extends StatefulWidget{
   const MenuPage({super.key});
@@ -12,6 +15,10 @@ class MenuPage extends StatefulWidget{
 }
 
 class _MenuPageState extends State<MenuPage> {
+  
+  void goToOrderPage(Drink drink){
+    Navigator.push(context, MaterialPageRoute(builder: (context) => OrderPage()));
+  }
   @override
   Widget build(BuildContext context) {
     //wrapped SafeArea block in Consumer widget from provider package
@@ -31,15 +38,21 @@ class _MenuPageState extends State<MenuPage> {
               Expanded(
                 child: ListView.builder(
                   itemCount: value.menu.length,
-                  itemBuilder: (context, index) => ListTile(
-                    title: Text(value.menu[index].name),
-                  ),
+                  itemBuilder: (context, index) {
+                    // get each drink from menu
+                    Drink tileDrink = value.menu[index];
+                    // return each drink as a tile
+                    return DrinkTile(
+                      drink: tileDrink,
+                      onTap: () => goToOrderPage(tileDrink),
+                      );
+                  },
                 ),
-              )
+              ),
             ],
           ),
         ),
       ),
-    ); 
+    );
   }
 }
