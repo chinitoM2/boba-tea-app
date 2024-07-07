@@ -14,8 +14,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  // navigate bottom navigation bar
-  int _selectedIndex = 0; // home icon
+  int _selectedIndex = 0; // default home icon to index 0, cart icon to index 1
+  // navigate bottom navigation bar function
   void navigateBottomBar(int newIndex){
     setState((){
       _selectedIndex = newIndex;
