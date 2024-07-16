@@ -9,6 +9,15 @@ class BobaTeaMenu extends ChangeNotifier{
       name: "Classic Milk Tea",
       price: 5.50,
       imagePath: "lib/images/classic_milk_tea.png",
+      // availableAddons: [
+      //   Addon(name: "Boba Pearls", price: 0.75),
+      //   Addon(name: "Coconut Jelly", price: 0.75),
+      //   Addon(name: "Coffee Jelly", price: 0.75),
+      //   Addon(name: "Grass Jelly", price: 0.75),
+      //   Addon(name: "Lychee Jelly", price: 0.75),
+      //   Addon(name: "Egg Pudding", price: 0.75),
+      //   Addon(name: "Aloe Vera", price: 0.75),
+      // ],
     ),
   ];
 
