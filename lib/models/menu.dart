@@ -22,22 +22,22 @@ class BobaTeaMenu extends ChangeNotifier{
   ];
 
   // list of drinks in customer's cart
-  final List<Drink> _userCart = [];
+  final List<Drink> _customerCart = [];
 
   // getter for menu
   List<Drink> get menu => _menu;
 
   // getter for customer's cart
-  List<Drink> get userCart => _userCart;
+  List<Drink> get cart => _customerCart;
 
   // add drink to cart
   void addToCart(Drink drink){
-    _userCart.add(drink);
+    _customerCart.add(drink);
     notifyListeners();
   }
   // remove drink from cart
   void removeFromCart(Drink drink){
-    _userCart.remove(drink);
+    _customerCart.remove(drink);
     notifyListeners();
   }
 }

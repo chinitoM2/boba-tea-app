@@ -3,11 +3,13 @@ import '../models/drink.dart';
 
 class DrinkTile extends StatelessWidget {
   final Drink drink;
-  void Function()? onTap;
-  DrinkTile({
+  final void Function()? onTap;
+  final Widget trailing;
+  const DrinkTile({
     super.key,
     required this.drink,
     required this.onTap,
+    required this.trailing,
     });
 
   @override
@@ -15,6 +17,7 @@ class DrinkTile extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        margin: const EdgeInsets.only(bottom: 11),
         decoration: BoxDecoration(color: Colors.brown[100],
         borderRadius: BorderRadius.circular(11),
         ),
@@ -22,7 +25,7 @@ class DrinkTile extends StatelessWidget {
           title: Text(drink.name),
           subtitle: Text("\$${drink.price.toStringAsFixed(2)}"),
           leading: Image.asset(drink.imagePath),
-          trailing: Icon(Icons.arrow_forward_rounded),
+          trailing: trailing,
         ),
       ),
     );

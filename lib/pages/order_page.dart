@@ -116,7 +116,7 @@ class _OrderPageState extends State<OrderPage> {
           MaterialButton(
             color: Colors.brown,
             onPressed: addToCart,
-            child: Text('Add to Cart', style: TextStyle(color: Colors.white),),
+            child: const Text('Add to Cart', style: TextStyle(color: Colors.white),),
           )
         ],
       ),

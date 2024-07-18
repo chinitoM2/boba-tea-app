@@ -34,6 +34,7 @@ class _MenuPageState extends State<MenuPage> {
                 "Boba Tea Menu",
                 style: TextStyle(fontSize: 24),
               ),
+              const SizedBox(height: 11),
               // list of drinks for sale
               Expanded(
                 child: ListView.builder(
@@ -45,6 +46,7 @@ class _MenuPageState extends State<MenuPage> {
                     return DrinkTile(
                       drink: tileDrink,
                       onTap: () => goToOrderPage(tileDrink),
+                      trailing: Icon(Icons.arrow_forward_rounded),
                       );
                   },
                 ),
