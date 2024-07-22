@@ -44,8 +44,17 @@ class _CheckoutPageState extends State<CheckoutPage>{
             ),
 
             // YES button
-            TextButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ReceiptPage(),),),
-            child: const Text("Yes"),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ReceiptPage(),
+                  ),
+                );
+              },
+              child: const Text("Yes"),
             )
           ],
           ),
