@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../models/drink.dart';
+import 'checkout_page.dart';
 
 class CartPage extends StatefulWidget{
   const CartPage({super.key});
@@ -18,6 +19,10 @@ class _CartPageState extends State<CartPage>{
   // remove drink from cart
   void removeFromCart(Drink drink){
     Provider.of<BobaTeaMenu>(context, listen: false).removeFromCart(drink);
+  }
+
+  void goToCheckoutPage(){
+    Navigator.push(context, MaterialPageRoute(builder: (context) => CheckoutPage(),),);
   }
 
   @override
@@ -50,9 +55,9 @@ class _CartPageState extends State<CartPage>{
             ),
             // checkout button
             MaterialButton(
-              child: const Text('CHECKOUT', style: TextStyle(color: Colors.white),), 
               color: Colors.brown,
-              onPressed: () {},
+              onPressed: () => goToCheckoutPage(),
+              child: const Text('CHECKOUT', style: TextStyle(color: Colors.white),),
             ),
           ],
         ),
