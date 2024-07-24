@@ -47,8 +47,11 @@ class _CartPageState extends State<CartPage>{
               // return drink as a tile
               return DrinkTile(
                 drink: drink,
-                onTap: () => removeFromCart(drink),
-                trailing: Icon(Icons.delete),
+                //onTap: () => removeFromCart(drink),
+                trailing: IconButton(
+                  icon: const Icon(Icons.delete),
+                  onPressed: () => removeFromCart(drink),
+                ),
               );
             },
             ),

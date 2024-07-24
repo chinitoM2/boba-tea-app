@@ -45,9 +45,12 @@ class _MenuPageState extends State<MenuPage> {
                     // return each drink as a tile
                     return DrinkTile(
                       drink: tileDrink,
-                      onTap: () => goToOrderPage(tileDrink),
-                      trailing: Icon(Icons.arrow_forward_rounded),
-                      );
+                      //onTap: () => goToOrderPage(tileDrink),
+                      trailing: IconButton(
+                        icon: const Icon(Icons.arrow_forward_rounded),
+                        onPressed: () => goToOrderPage(tileDrink),
+                      ),
+                    );
                   },
                 ),
               ),

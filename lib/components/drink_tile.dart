@@ -3,19 +3,19 @@ import '../models/drink.dart';
 
 class DrinkTile extends StatelessWidget {
   final Drink drink;
-  final void Function()? onTap;
+  //final void Function()? onTap;
   final Widget trailing;
   const DrinkTile({
     super.key,
     required this.drink,
-    required this.onTap,
+    //required this.onTap,
     required this.trailing,
     });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      //onTap: onTap,
       child: Container(
         margin: const EdgeInsets.only(bottom: 11),
         decoration: BoxDecoration(color: Colors.brown[100],
